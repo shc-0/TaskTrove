@@ -1,10 +1,8 @@
-import { graph, config } from '@grafbase/sdk'
+import { g, config } from '@grafbase/sdk'
 
 // Welcome to Grafbase!
 //
 // Configure authentication, data sources, resolvers and caching for your GraphQL API.
-
-const g = graph.Standalone()
 
 const User = g.model('User', {
   name: g.string().length({ min: 2, max: 100 }),
@@ -28,5 +26,5 @@ const Project = g.model('Project', {
 })
 
 export default config({
-  graph: g,
+  schema: g,
 })
